@@ -3,6 +3,7 @@ package never_use_switch_lab;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -16,8 +17,7 @@ import static java.util.stream.Collectors.toMap;
 public class MailSender {
 
 
-    @Autowired
-    private Map<Integer, MailGenerator> map;
+    private Map<Integer, MailGenerator> map = new HashMap<>();
 
 
 
@@ -33,6 +33,10 @@ public class MailSender {
 
     private void send(String html) {
         System.out.println("html = " + html);
+    }
+
+    public void registerBean(int mailType, MailGenerator mailGenerator) {
+        map.put(mailType, mailGenerator);
     }
 }
 
