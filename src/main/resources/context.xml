@@ -1,38 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
-
-    <bean class="quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
-
-    <bean id="s" class="java.lang.String">
-        <constructor-arg value="Talk to the hand"/>
-    </bean>
-
-    <bean id="robot" class="quoters.TalkingRobotImpl">
-        <property name="quoters">
-            <list>
-                <ref bean="shakespeareQuoter"/>
-                <ref bean="terminatorQuoter"/>
-            </list>
-        </property>
-    </bean>
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <bean id="shakespeareQuoter" class="quoters.ShakespeareQuoter">
-        <property name="message" value="2 B || ! 2 B"/>
-    </bean>
-    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter" >
-        <property name="messages">
-            <list>
-                <value>I'll be back</value>
-                <ref bean="s"/>
-                <value>Hastalavista baby</value>
-            </list>
-        </property>
-    </bean>
+
+<!--    <bean class="java.lang.Integer" factory-bean="integerFactory" factory-method="getInt"/>-->
+
+<!--    <bean id="integerFactory" class="quoters.IntegerFactory">-->
+<!--    </bean>-->
+
+
+
+
+
+
+
+
+
+
 
 </beans>
 

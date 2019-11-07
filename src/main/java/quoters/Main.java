@@ -1,7 +1,9 @@
 package quoters;
 
 import lombok.SneakyThrows;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Evgeny Borisov
@@ -9,9 +11,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     @SneakyThrows
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Conf.class);
 
-        Thread.sleep(5000);
         context.close();
     }
 }
