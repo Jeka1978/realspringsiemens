@@ -16,12 +16,10 @@ import static java.util.stream.Collectors.toMap;
 public class MailSender {
 
 
+    @Autowired
     private Map<Integer, MailGenerator> map;
 
-    @Autowired
-    public MailSender(List<MailGenerator> mailGenerators) {
-        map = mailGenerators.stream().collect(toMap(MailGenerator::getMyType, Function.identity()));
-    }
+
 
     public void sendMail(MailInfo mailInfo) {
         int mailType = mailInfo.getMailType();
